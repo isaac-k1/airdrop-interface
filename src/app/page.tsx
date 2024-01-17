@@ -19,11 +19,23 @@ export default async function Home() {
           New
         </Link>
       </header>
-      <ul className="ml-10">
-        {airdrops.map((airdrop) => (
-          <AirdropItem key={airdrop.id} {...airdrop} />
-        ))}
-      </ul>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto text-slate-300">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">Chain</th>
+              <th className="px-4 py-2">Protocol</th>
+              <th className="px-4 py-2">Confirmed</th>
+              <th className="px-4 py-2">Expected TGE Date</th>
+            </tr>
+          </thead>
+          <tbody className="text-center">
+            {airdrops.map((airdrop) => (
+              <AirdropItem key={airdrop.id} {...airdrop} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

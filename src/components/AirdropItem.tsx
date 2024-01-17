@@ -16,19 +16,11 @@ export function AirdropItem({
   expectedTgeDate,
 }: AirdropItemProps) {
   return (
-    <li className="flex gap-1 items-center">
-      <label htmlFor={id} className="text-slate-300">
-        {chain}
-      </label>
-      <label htmlFor={id} className="text-slate-300">
-        {protocol}
-      </label>
-      <label htmlFor={id} className="text-slate-300">
-        {confirmed}
-      </label>
-      <label htmlFor={id} className="text-slate-300">
-        {expectedTgeDate.toString()}
-      </label>
-    </li>
+    <tr className="border-t border-slate-600">
+      <td className="px-4 py-2">{chain}</td>
+      <td className="px-4 py-2">{protocol}</td>
+      <td className="px-4 py-2">{confirmed ? "Yes" : "No"}</td>
+      <td className="px-4 py-2">{expectedTgeDate.toLocaleDateString()}</td>
+    </tr>
   );
 }
