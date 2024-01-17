@@ -19,7 +19,7 @@ export default async function Home() {
           New
         </Link>
       </header>
-      <ul className="pl-4">
+      <ul className="ml-10">
         {airdrops.map((airdrop) => (
           <AirdropItem key={airdrop.id} {...airdrop} />
         ))}
