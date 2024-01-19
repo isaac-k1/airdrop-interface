@@ -38,68 +38,68 @@ export default function Page() {
   return (
     <>
       <header className="flex justify-center text-center mb-10 mt-10">
-        <h1 className="text-3xl font-mono">Add Airdrop</h1>
+        <h1 className="text-3xl font-mono text-slate-100">Add Airdrop</h1>
       </header>
       <form
         action={addAirdrop}
         className="flex flex-col items-center gap-4 p-2"
       >
         <div className="flex flex-col w-full max-w-md">
-          <label htmlFor="chain" className="text-slate-300 mb-2">
+          <label htmlFor="chain" className="text-slate-100 mb-2">
             Chain
           </label>
           <input
             type="text"
             id="chain"
             name="chain"
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            className="border text-slate-100 border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
-          <label htmlFor="protocol" className="text-slate-300 mb-2">
+          <label htmlFor="protocol" className="text-slate-100 mb-2">
             Protocol
           </label>
           <input
             type="text"
             id="protocol"
             name="protocol"
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            className="text-slate-100 border border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
-          <label htmlFor="confirmed" className="text-slate-300 mb-2">
+          <label htmlFor="confirmed" className="text-slate-100 mb-2">
             Confirmed
           </label>
           <select
             id="confirmed"
             name="confirmed"
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            className="text-slate-100 border border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
           >
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>
         </div>
         <div className="flex flex-col w-full max-w-md">
-          <label htmlFor="expectedTgeDate" className="text-slate-300 mb-2">
+          <label htmlFor="expectedTgeDate" className="text-slate-100 mb-2">
             Expected TGE Date
           </label>
           <input
             type="date"
             id="expectedTgeDate"
             name="expectedTgeDate"
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            className="text-slate-100 border border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
           />
         </div>
         <div className="flex justify-center w-full max-w-md">
           <button
             type="submit"
-            className="border border-slate-300 text-slate-300 px-4 py-2 rounded hover:bg-slate-700 outline-none mr-2"
+            className="border border-slate-100 text-slate-100 px-4 py-2 rounded hover:bg-slate-700 outline-none mr-2"
           >
             Add
           </button>
           <Link
             href=".."
-            className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 outline-none"
+            className="border border-slate-100 text-slate-100 px-2 py-1 rounded hover:bg-slate-700 outline-none"
           >
             Cancel
           </Link>
