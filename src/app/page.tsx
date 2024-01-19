@@ -31,7 +31,9 @@ export default async function Home() {
           </thead>
           <tbody className="text-center">
             {airdrops.map((airdrop) => (
-              <AirdropItem key={airdrop.id} {...airdrop} />
+              <>
+                <AirdropItem key={airdrop.id} {...airdrop} />
+              </>
             ))}
           </tbody>
         </table>
