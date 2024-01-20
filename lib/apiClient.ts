@@ -2,7 +2,7 @@
 
 import prisma from "./prisma";
 
-async function deleteAirdrop(id: string): Promise<void> {
+export async function deleteAirdrop(id: string): Promise<void> {
   try {
     await prisma.airdrop.delete({
       where: { id },
@@ -12,4 +12,11 @@ async function deleteAirdrop(id: string): Promise<void> {
   }
 }
 
-export { deleteAirdrop };
+export async function getAllAirdrops(): Promise<any> {
+  try {
+    const airdrops = await prisma.airdrop.findMany();
+    return airdrops;
+  } catch (error) {
+    throw new Error(`Error getting all airdrops: ${error}`);
+  }
+}

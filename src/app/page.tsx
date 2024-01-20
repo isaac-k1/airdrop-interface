@@ -1,13 +1,51 @@
-import prisma from "../../lib/prisma";
+"use client";
+
+import { getAllAirdrops } from "../../lib/apiClient";
 import { AirdropItem } from "@/components/AirdropItem";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-function getAirdrops() {
-  return prisma.airdrop.findMany();
+interface Airdrop {
+  id: string;
+  chain: string;
+  protocol: string;
+  confirmed: boolean;
+  expectedTgeDate: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export default async function Home() {
-  const airdrops = await getAirdrops();
+export default function Home() {
+  const [airdrops, setAirdrops] = useState<Airdrop[]>([]);
+  const [sortDirection, setSortDirection] = useState("asc");
+
+  const handleDeleteAirdrop = (id: string) => {
+    setAirdrops((currentAirdrops) =>
+      currentAirdrops.filter((airdrop) => airdrop.id !== id)
+    );
+  };
+
+  const sortAirdrops = () => {
+    const sortedAirdrops = [...airdrops].sort((a, b) => {
+      if (sortDirection === "asc") {
+        return a.chain.localeCompare(b.chain);
+      } else {
+        return b.chain.localeCompare(a.chain);
+      }
+    });
+
+    setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    setAirdrops(sortedAirdrops);
+  };
+
+  useEffect(() => {
+    const fetchAirdrops = async () => {
+      const airdrops = await getAllAirdrops();
+      setAirdrops(airdrops);
+    };
+    fetchAirdrops();
+  }, []);
+
   return (
     <>
       <header className="flex justify-center text-center mb-4 mt-10">
@@ -25,7 +63,12 @@ export default async function Home() {
         <table className="table-auto text-slate-100">
           <thead>
             <tr>
-              <th className="px-4 py-2">Chain</th>
+              <th className="cursor-pointer px-4 py-2" onClick={sortAirdrops}>
+                Chain
+                <span className="ml-2">
+                  {sortDirection === "asc" ? "▼" : "▲"}
+                </span>
+              </th>
               <th className="px-4 py-2">Protocol</th>
               <th className="px-4 py-2">Confirmed</th>
               <th className="px-4 py-2">Expected TGE Date</th>
@@ -33,7 +76,11 @@ export default async function Home() {
           </thead>
           <tbody className="text-center">
             {airdrops.map((airdrop) => (
-              <AirdropItem key={airdrop.id} {...airdrop} />
+              <AirdropItem
+                key={airdrop.id}
+                {...airdrop}
+                onDelete={handleDeleteAirdrop}
+              />
             ))}
           </tbody>
         </table>
