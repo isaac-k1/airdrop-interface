@@ -13,10 +13,11 @@
 <div align="center">
 <h3 align="center">Airdrop Interface App</h3>
   <p align="center">
-    An application designed for tracking and managing cryptocurrency airdrops using Next.js, React, Prisma, TailwindCSS, and MySQL. 
+    An application designed for tracking and managing cryptocurrency airdrops using Next.js, React, Prisma, TailwindCSS, and MySQL.<br><br>
     This project addresses the complex challenge of monitoring various crypto protocols and their associated token airdrops.
     <br />
     <br />
+    <em>** Live URL Coming Soon **</em> 
     <!-- <a href="https://ticket-app-bay.vercel.app/">View Demo</a>
     · -->
     <a href="https://github.com/isaac-k1/airdrop-interface/issues">Report Bug</a>
@@ -44,7 +45,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -61,7 +61,7 @@
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
 - [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
-- [![MongoDB][MongoDB]][MongoDB-url]
+- [![MySQL][MySQL]][MySQL-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,7 +147,7 @@ Project Link: [https://github.com/isaac-k1/airdrop-interface](https://github.com
 [JQuery-url]: https://jquery.com
 [MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB-url]: https://www.mongodb.com/
-[TailwindCSS]: https://tailwindcss.com/
-[TailwindCSS-url]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[MySQL]: https://mysql.com/
-[MySQL-url]: https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
+[MySQL]: https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white
+[MySQL-url]: https://mysql.com/
