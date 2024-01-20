@@ -13,7 +13,7 @@
 <div align="center">
 <h3 align="center">Airdrop Interface App</h3>
   <p align="center">
-    An application designed for tracking and managing cryptocurrency airdrops.
+    An original application designed for tracking and managing cryptocurrency airdrops.
     <br />
     This project addresses the challenge of monitoring various crypto protocols and its associated token airdrops.
     <br />
