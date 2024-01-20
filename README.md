@@ -13,11 +13,12 @@
 <div align="center">
 <h3 align="center">Airdrop Interface App</h3>
   <p align="center">
-    An application designed for tracking and managing cryptocurrency airdrops using Next.js, React, Prisma, TailwindCSS, and MySQL.<br><br>
-    This project addresses the complex challenge of monitoring various crypto protocols and their associated token airdrops.
+    An application designed for tracking and managing cryptocurrency airdrops using Next.js, React, Prisma, TailwindCSS, and MySQL.<br>
+    This project addresses the challenge of monitoring various crypto protocols and its associated token airdrops.
     <br />
     <br />
     <em>** Live URL Coming Soon **</em> 
+    <br />
     <!-- <a href="https://ticket-app-bay.vercel.app/">View Demo</a>
     · -->
     <a href="https://github.com/isaac-k1/airdrop-interface/issues">Report Bug</a>
