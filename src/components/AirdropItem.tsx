@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { deleteAirdrop } from "../../lib/apiClient";
 
 type AirdropItemProps = {
@@ -38,6 +39,14 @@ export function AirdropItem({
       <td className="max-w-32 break-words px-4 py-2">{protocol}</td>
       <td className="px-4 py-2">{confirmed ? "Yes" : "No"}</td>
       <td className="px-4 py-2">{expectedTgeDate.toLocaleDateString()}</td>
+      <td className="px-2 py-2">
+        <Link
+          href={`/modifyAirdrop/${id}`}
+          className="p-1 bg-blue-600 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 transition ease-in-out duration-150"
+        >
+          Modify
+        </Link>
+      </td>
       <td className="px-4 py-2">
         <button
           className="p-1 bg-red-600 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-opacity-50 transition ease-in-out duration-150"
