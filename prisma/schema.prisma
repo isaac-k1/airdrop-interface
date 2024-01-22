@@ -8,4 +8,21 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+model Airdrop {
+  id        String   @id @default(uuid())
+  chain     String
+  protocol  String
+  confirmed Boolean
+  expectedTgeDate      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
