@@ -20,6 +20,11 @@ export function AirdropItem({
   expectedTgeDate,
   onDelete,
 }: AirdropItemProps) {
+  const toMMDDYYYY = (isoDateString: any) => {
+    const [year, month, day] = isoDateString.split("-");
+    return `${month}-${day}-${year}`;
+  };
+
   const handleDelete = async () => {
     if (
       window.confirm("Are you sure you want to delete this airdrop item? 🤔")
@@ -38,7 +43,9 @@ export function AirdropItem({
       <td className="max-w-32 break-words px-4 py-2">{chain}</td>
       <td className="max-w-32 break-words px-4 py-2">{protocol}</td>
       <td className="px-4 py-2">{confirmed ? "Yes" : "No"}</td>
-      <td className="px-4 py-2">{expectedTgeDate.toLocaleDateString()}</td>
+      <td className="px-4 py-2">
+        {toMMDDYYYY(expectedTgeDate.toISOString().split("T")[0])}
+      </td>
       <td className="px-2 py-2">
         <Link
           href={`/modifyAirdrop/${id}`}

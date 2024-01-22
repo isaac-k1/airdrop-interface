@@ -110,7 +110,7 @@ Use this app to create, manage, and delete upcoming airdrops.
 
 ## Contact
 
-Isaac Kwong - @isaac.code980@gmail.com
+Isaac - @isaac.code980@gmail.com
 
 Project Link: [https://github.com/isaac-k1/airdrop-interface](https://github.com/isaac-k1/airdrop-interface)
 

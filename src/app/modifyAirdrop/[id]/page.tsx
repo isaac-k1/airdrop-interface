@@ -7,11 +7,20 @@ import {
   useRouter,
   useSearchParams,
 } from "next/navigation";
-import { modifyAirdrop } from "../../../../lib/apiClient";
+import { modifyAirdrop, getAirdropById } from "../../../../lib/apiClient";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const pathname = usePathname();
   const id = pathname.split("/").pop() as string;
+
+  const [airdropData, setAirdropData] = useState({
+    id: "",
+    chain: "",
+    protocol: "",
+    confirmed: false,
+    expectedTgeDate: "",
+  });
 
   async function modifyAirdropData(data: FormData) {
     const chain = data.get("chain")?.valueOf();
@@ -37,6 +46,27 @@ export default function Page() {
     redirect("/");
   }
 
+  useEffect(() => {
+    const fetchAirdropData = async () => {
+      try {
+        const data = await getAirdropById(id);
+        setAirdropData({
+          id: data.id,
+          chain: data.chain,
+          protocol: data.protocol,
+          confirmed: data.confirmed,
+          expectedTgeDate: new Date(data.expectedTgeDate)
+            .toISOString()
+            .split("T")[0],
+        });
+      } catch (error) {
+        console.error("Failed to fetch airdrop data:", error);
+      }
+    };
+
+    fetchAirdropData();
+  }, []);
+
   return (
     <>
       <header className="flex justify-center text-center mb-10 mt-10">
@@ -55,6 +85,10 @@ export default function Page() {
             id="chain"
             name="chain"
             className="border text-slate-100 border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            value={airdropData.chain}
+            onChange={(e) =>
+              setAirdropData({ ...airdropData, chain: e.target.value })
+            }
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
@@ -66,6 +100,10 @@ export default function Page() {
             id="protocol"
             name="protocol"
             className="text-slate-100 border border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            value={airdropData.protocol}
+            onChange={(e) =>
+              setAirdropData({ ...airdropData, protocol: e.target.value })
+            }
           />
         </div>
         <div className="flex flex-col w-full max-w-md">
@@ -90,6 +128,13 @@ export default function Page() {
             id="expectedTgeDate"
             name="expectedTgeDate"
             className="text-slate-100 border border-slate-100 bg-transparent rounded px-2 py-1 outline-none focus:within:border-slate-100 w-full"
+            value={airdropData.expectedTgeDate}
+            onChange={(e) =>
+              setAirdropData({
+                ...airdropData,
+                expectedTgeDate: e.target.value,
+              })
+            }
           />
         </div>
         <div className="flex justify-center w-full max-w-md">

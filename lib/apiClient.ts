@@ -34,6 +34,17 @@ export async function modifyAirdrop(
   }
 }
 
+export async function getAirdropById(id: string): Promise<any> {
+  try {
+    const airdrop = await prisma.airdrop.findUnique({
+      where: { id },
+    });
+    return airdrop;
+  } catch (error) {
+    throw new Error(`Error getting airdrop by id: ${error}`);
+  }
+}
+
 export async function getAllAirdrops(): Promise<any> {
   try {
     const airdrops = await prisma.airdrop.findMany();
