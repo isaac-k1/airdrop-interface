@@ -18,11 +18,8 @@
     This project addresses the challenge of monitoring various crypto protocols and its associated token airdrops.
     <br />
     <br />
-    <em>** Live URL Coming Soon **</em> 
-    <br />
-    <br />
-    <!-- <a href="https://ticket-app-bay.vercel.app/">View Demo</a>
-    · -->
+    <a href="https://airdrop-interface-one.vercel.app">View Demo</a>
+    ·
     <a href="https://github.com/isaac-k1/airdrop-interface/issues">Report Bug</a>
     ·
     <a href="https://github.com/isaac-k1/airdrop-interface/issues">Request Feature</a>
@@ -55,7 +52,7 @@
 
 ## About The Project
 
-[![Airdrop Interface Screen Shot][product-screenshot]](https://github.com/isaac-k1/airdrop-interface/)
+[![Airdrop Interface Screen Shot][product-screenshot]](https://airdrop-interface-one.vercel.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -64,6 +61,7 @@
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
 - [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+- [![Prisma][Prisma]][Prisma-url]
 - [![MySQL][MySQL]][MySQL-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -154,3 +152,5 @@ Project Link: [https://github.com/isaac-k1/airdrop-interface](https://github.com
 [TailwindCSS-url]: https://tailwindcss.com/
 [MySQL]: https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white
 [MySQL-url]: https://mysql.com/
+[Prisma]: https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white
+[Prisma-url]: https://prisma.io/
